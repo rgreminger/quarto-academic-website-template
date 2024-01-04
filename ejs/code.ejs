@@ -1,0 +1,46 @@
+```{=html}
+<% for (const item of items) { %>
+    <b><a href="<%- item.codelink %>"><%= item.title %></a></b><br/>
+        <% if (item.coauthors) { %>
+            <% if (item.coauthors.length == 1) { %>
+                Joint with <a href="<%- item.coauthors[0].link %>"><%= item.coauthors[0].name %></a>.<br/>
+            <% } else { %>
+                 Joint with 
+                 <% for (const coauthor of item.coauthors.slice(0, -2)) { %>
+                    <% if (coauthor.link) { %>
+                        <a href="<%- coauthor.link %>"><%= coauthor.name %></a>,
+                    <% } else { %>
+                        <%= coauthor.name %>,
+                    <% } %>
+                <% } %>
+                <% if (item.coauthors[item.coauthors.length - 2].link) { %>
+                    <a href="<%- item.coauthors[item.coauthors.length - 2].link %>"><%= item.coauthors[item.coauthors.length - 2].name %></a>
+                <% } else { %>
+                    <%= item.coauthors[item.coauthors.length - 2].name %>
+                <% } %>
+                <% if (item.coauthors[item.coauthors.length - 1].link) { %>
+                    and <a href="<%- item.coauthors[item.coauthors.length - 1].link %>"><%= item.coauthors[item.coauthors.length - 1].name %></a>.<br/>
+                <% } else { %>
+                    and <%= item.coauthors[item.coauthors.length - 1].name %>.<br/>
+                <% } %>
+            <% } %>
+        <% } %>
+
+    <par> <%= item.description %></par>  <br/> 
+    <% if (item.note) { %>
+        <i><%= item.note %></i><br/>
+    <% } %>
+    <% if (item.slideslink) { %> 
+        <a href="<%- item.slideslink %>"> 
+            <button type="button" class="btn btn-outline-primary btn-sm scale">Slides</button>
+        </a>
+    <% } %>
+    <% if (item.videolink) { %> 
+        <a href="<%- item.videolink %>"> 
+            <button type="button" class="btn btn-outline-primary btn-sm scale">Video</button>
+        </a>
+    <% } %>
+
+    <br/>
+<% } %>
+```

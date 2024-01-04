@@ -1,0 +1,39 @@
+/* update how links are displayed */ 
+a {
+    color: #0a1015;
+    text-decoration: none;
+}
+
+/* add an image_list class which then can be removed on mobile */
+.image_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+
+/* remove image in list on mobile */
+@media screen and (max-width: 600px) {
+    .image_list {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+/* adjust font size for smaller screen */
+/* @media all and (max-width: 600px) {
+    body {
+      font-size: 70%;
+    }
+    p {
+        font-size: 70%;
+    }
+    abstract-title {
+        font-size: 70%;
+    }
+    button.scale {
+            font-size: 70%;  
+            border-radius: 6px;
+            padding: 3px 3px
+        }
+  } */

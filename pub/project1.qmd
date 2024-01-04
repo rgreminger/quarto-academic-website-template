@@ -1,0 +1,30 @@
+---
+title: "Publication 1" 
+date: "01-01-2024"
+date-format: "YYYY" # only display year 
+# Below add respective buttons to the list in the research page. To remove buttons that are not needed, just remove the respective link here. 
+publink: "https://pubsonline.informs.org/" # "Paper" button 
+wplink: "https://arxiv.org/"  # "Working Paper" button
+codelink: "https://github.com/" # "Code" button
+videolink: "https://www.youtube.com/" # "Video" button
+# Publication information, which appears . 
+journ: "Journal of Interesting Research" 
+issue: "1(1):1-30"
+# Link to the image that will appear in the research list and on the project page. If no image should appear, just remove the link here. 
+image: "../images/project1.png"
+format: 
+  html:
+    page-layout: article
+    template-partials: 
+      - "../partials/title-block.html" # custom HTML partial that determines how the title block is displayed (with image, author and journal information). 
+# Coauthor information that will be displayed on the research list and on the project page. 
+coauthors:
+  - name: "Jane Doe"
+    link: "https://link.to.website/" # add link to co-author's website here. If no link should appear, just remove the link here.
+  - name: "Josh Doe"
+    link: "https://link.to.website/"
+---
+
+### Abstract
+
+This paper studies an interesting research question. 

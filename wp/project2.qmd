@@ -1,0 +1,23 @@
+---
+title: "Working Paper 1"
+date: "2024"
+date-format: "YYYY"
+wplink: "https://arxiv.org/"
+codelink: "https://github.com/"
+coauthors:
+  - name: "Jane Doe"
+    link: "https://link.to.website/"
+
+format: 
+  html:
+    page-layout: article
+    template-partials: 
+      - "../partials/title-block.html"
+
+# Note: details for the different options are explained in pub/project1.qmd. The only difference to there is that for working papers, there is no option to add journal information. 
+---
+
+
+### Abstract
+
+We study an interesting research question. 

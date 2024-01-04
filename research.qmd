@@ -1,0 +1,34 @@
+---
+# This is the research page of the website
+title: Research 
+listing: # this determines different lists with respective options. These are accessed in the below with the :::{#id}::: syntax.
+  - id: wp 
+    contents: "wp/*.qmd" # from which folder to take the contents. Here, take all .qmd files from the wp folder. 
+    sort: "date desc" # how to sort the contents.
+    template: ejs/wp.ejs  # how to display contents. Here, use the customized wp.ejs in the ejs folder.
+  - id: pub
+    sort: "date desc"
+    contents: "pub/*.qmd"
+    template: ejs/pub.ejs
+  - id: wip
+    sort: "date desc"
+    contents: "wip/*.qmd"
+    template: ejs/wp.ejs
+
+---
+
+### Working Papers 
+
+:::{#wp}
+:::
+
+### Publications 
+
+:::{#pub}
+:::
+
+### Work in Progress 
+
+:::{#wip}
+:::
+

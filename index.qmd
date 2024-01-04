@@ -1,0 +1,25 @@
+---
+title: "John Doe" # This is the Name that appears on the landing page
+image: images/avatar.jpg # This is the image that appears on the landing page
+about:   
+    template: solana # see other templates at https://quarto.org/docs/websites/website-about.html#templates
+    image-width: 10em
+    links: # Here we can add links that appear as buttons on the landing page
+        - icon: CV
+          href: files/cv.pdf
+          text: CV
+
+        # - icon: github
+        #   href: https://github.com/USERNAME
+        #   text: Github
+
+# Below, we can add any custom text using Markdown syntax. 
+---
+
+I am John Doe and I do interesting research. 
+
+### Resarch Interests 
+Interest 1, Interest 2, Interest 3
+
+### Office
+Room, Street, City, Country

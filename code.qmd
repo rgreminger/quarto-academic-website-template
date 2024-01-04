@@ -1,0 +1,10 @@
+---
+title: Code
+listing: # For details on these lists, see the notes in research.qmd
+  contents: "code/*.qmd"
+  sort: "date desc"
+  template: ejs/code.ejs
+---
+
+:::{#code}
+:::

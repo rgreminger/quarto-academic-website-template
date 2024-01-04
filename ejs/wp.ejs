@@ -1,0 +1,66 @@
+```{=html}
+
+<% for (const item of items) { %>
+    <div class="list grid" style="column-gap: 5px;">
+        <div class="g-col-12 g-col-lg-8 g-col-md-9 g-col-sm-9">
+        <b><a href="<%- item.path %>"><%= item.title %></a></b><br/>
+        <% if (item.coauthors) { %>
+            <% if (item.coauthors.length == 1) { %>
+                Joint with <a href="<%- item.coauthors[0].link %>"><%= item.coauthors[0].name %></a>.<br/>
+            <% } else { %>
+                Joint with 
+                <% for (const coauthor of item.coauthors.slice(0, -2)) { %>
+                    <% if (coauthor.link) { %>
+                        <a href="<%- coauthor.link %>"><%= coauthor.name %></a>,
+                    <% } else { %>
+                        <%= coauthor.name %>,
+                    <% } %>
+                <% } %>
+                <% if (item.coauthors[item.coauthors.length - 2].link) { %>
+                    <a href="<%- item.coauthors[item.coauthors.length - 2].link %>"><%= item.coauthors[item.coauthors.length - 2].name %></a>
+                <% } else { %>
+                    <%= item.coauthors[item.coauthors.length - 2].name %>
+                <% } %>
+                <% if (item.coauthors[item.coauthors.length - 1].link) { %>
+                    and <a href="<%- item.coauthors[item.coauthors.length - 1].link %>"><%= item.coauthors[item.coauthors.length - 1].name %></a>.<br/>
+                <% } else { %>
+                    and <%= item.coauthors[item.coauthors.length - 1].name %>.<br/>
+                <% } %>
+            <% } %>
+        <% } %>
+    <% if (item.note) { %>
+        <i><%= item.note %></i><br/>
+    <% } %>
+    <% if (item.wplink) { %> 
+        <a href="<%- item.wplink %>"> 
+            <button type="button" class="btn btn-outline-primary btn-sm scale">Working Paper</button>
+        </a>
+    <% } %>
+    <% if (item.slideslink) { %> 
+        <a href="<%- item.slideslink %>"> 
+            <button type="button" class="btn btn-outline-primary btn-sm scale">Slides</button>
+        </a>
+    <% } %>
+    <% if (item.videolink) { %> 
+        <a href="<%- item.videolink %>"> 
+            <button type="button" class="btn btn-outline-primary btn-sm scale">Video</button>
+        </a>
+    <% } %>
+    <% if (item.codelink) { %> 
+        <a href="<%- item.codelink %>"> 
+            <button type="button" class="btn btn-outline-primary btn-sm scale">Code</button>
+        </a>
+    <% } %>
+    </div>
+    <div class="image_list g-col-8 g-col-lg-4 g-col-md-3 g-col-sm-3"> 
+        <% if (item.image) { %>
+            <a href="<%- item.path %>">
+                <img src="<%- item.image %>" alt="image" width="100%">
+            </a>
+    <% } %>
+    </div>
+    <br> 
+
+    </div>
+<% } %>
+```

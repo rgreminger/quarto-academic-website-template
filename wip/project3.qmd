@@ -1,0 +1,16 @@
+---
+title: "New Project"
+date: "2024"
+date-format: "YYYY"
+
+format: 
+  html:
+    page-layout: article
+    template-partials: 
+      - "../partials/title-block.html"
+---
+
+
+### Abstract 
+
+We will do interesting research. 

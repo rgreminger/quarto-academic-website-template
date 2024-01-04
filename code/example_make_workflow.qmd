@@ -1,0 +1,16 @@
+---
+title: "example-make-workflow "
+date: "2021"
+date-format: "YYYY"
+format: 
+  html:
+    page-layout: article
+codelink: "https://github.com/rgreminger/example-make-workflow"
+
+# Other links for adding buttons: slidelink, video link.
+# Other options for links or journal information are not available for code. 
+
+# Below, write a brief explanation on the purpose of the code/repository. This is what will be displayed in the list. 
+---
+
+Github repository providing a basic example for a Gnu make pipeline to implement a reproducible research workflow.

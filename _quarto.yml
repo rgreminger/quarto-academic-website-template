@@ -1,0 +1,31 @@
+project:
+  type: website
+  resources: # here we need to add any files that users should be able to download
+    - files/cv.pdf
+
+website:
+  title: "John Doe Title" # website title, this is what's displayed on the top
+  navbar: # Options for website navigation (including bar). For alternatives see https://quarto.org/docs/websites/website-navigation.html
+    left: # links displayed in navigation bar
+      - href: index.qmd
+        text: About
+      - href: research.qmd
+        text: Research 
+      - href: teaching.qmd
+        text: Teaching
+      - href: code.qmd
+        text: Code
+    search: false
+
+
+# Formatting. For more options see https://quarto.org/docs/output-formats/html-basics.html 
+format:
+  html:
+    fontsize: 100%
+    linestretch: 1.5
+    theme: litera
+    css: styles.css # custom file to adjust some css options 
+    toc: false
+
+
+
