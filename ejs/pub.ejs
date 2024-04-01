@@ -27,7 +27,7 @@
             <% } %>
         <% } %>
     <% } %>
-    <i><%= item.journ %></i>, <%= new Date().getFullYear(item.date) %>, <%= item.issue %>.<br/>
+    <i><%= item.journ %></i>, <%= new Date(item.date).getFullYear() %>, <%= item.issue %>.<br/>
     <% if (item.publink) { %> 
         <a href="<%- item.publink %>"> 
             <button type="button" class="btn btn-outline-primary btn-sm scale">Paper</button>
