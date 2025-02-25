@@ -21,6 +21,7 @@ website:
 # Formatting. For more options see https://quarto.org/docs/output-formats/html-basics.html 
 format:
   html:
+    page-layout: full
     fontsize: 100%
     linestretch: 1.5
     theme: litera
