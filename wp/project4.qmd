@@ -1,0 +1,31 @@
+---
+title: "Working Paper 2"
+date: "2025"
+date-format: "YYYY"
+links:
+  - url: "https://arxiv.org/"
+    label: "Working Paper"
+  - url: "https://slides.com/"
+    label: "Slides"
+coauthors:
+  - name: "Jane Doe"
+    link: "https://link.to.website/"
+  - name: "John Smith" # coauthor without a link to a website
+  - name: "Josh Doe"
+    link: "https://link.to.website/"
+
+image: "../images/project1.png"
+
+format:
+  html:
+    page-layout: article
+    template-partials:
+      - "../partials/title-block.html"
+
+# Note: details for the different options are explained in pub/project1.qmd. This example shows a paper with four authors (you and three coauthors), one of whom has no link.
+---
+
+
+### Abstract
+
+Together with three coauthors, we study another interesting research question.

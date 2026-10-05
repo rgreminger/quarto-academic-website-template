@@ -1,5 +1,5 @@
 ---
-title: "New Project"
+title: "New Project that I am working on"
 date: "2024"
 date-format: "YYYY"
 

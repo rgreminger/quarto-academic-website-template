@@ -1,7 +1,44 @@
-/* update how links are displayed */ 
+/* links: same font and color as the surrounding text, with a thin underline */
 a {
-    color: #0a1015;
+    color: inherit;
+    font-family: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+/* quarto removes underlines in the title block of paper pages; restore them */
+#title-block-header a {
+    text-decoration: underline;
+}
+
+/* no underline for links styled as buttons or wrapping images */
+a.btn,
+a.image-link,
+#title-block-header a.btn {
     text-decoration: none;
+}
+
+/* paper titles on the research page: clickable, semibold, no underline */
+a.paper-title {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* coauthor names: no underline (the title block rule above would otherwise add one) */
+a.coauthor,
+#title-block-header a.coauthor {
+    text-decoration: none;
+}
+
+/* underline paper titles and coauthor names on hover or keyboard focus, as a cue that they are clickable */
+a.paper-title:hover,
+a.paper-title:focus-visible,
+a.coauthor:hover,
+a.coauthor:focus-visible,
+#title-block-header a.coauthor:hover,
+#title-block-header a.coauthor:focus-visible {
+    text-decoration: underline;
 }
 
 /* add an image_list class which then can be removed on mobile */
@@ -31,7 +68,7 @@ a {
     abstract-title {
         font-size: 70%;
     }
-    button.scale {
+    .btn.scale {
             font-size: 70%;  
             border-radius: 6px;
             padding: 3px 3px

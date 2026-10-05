@@ -2,5 +2,6 @@
 *.quarto
 *site_libs/
 /.quarto/
-*README_files 
+*README_files
 README.html
+**/*.quarto_ipynb

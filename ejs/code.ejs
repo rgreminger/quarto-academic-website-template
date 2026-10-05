@@ -4,23 +4,23 @@
     <b><%= item.title %></b><br/>
         <% if (item.coauthors) { %>
             <% if (item.coauthors.length == 1) { %>
-                Joint with <a href="<%- item.coauthors[0].link %>"><%= item.coauthors[0].name %></a>.<br/>
+                Joint with <% if (item.coauthors[0].link) { %><a class="coauthor" href="<%- item.coauthors[0].link %>"><%= item.coauthors[0].name %></a><% } else { %><%= item.coauthors[0].name %><% } %>.<br/>
             <% } else { %>
                  Joint with 
                  <% for (const coauthor of item.coauthors.slice(0, -2)) { %>
                     <% if (coauthor.link) { %>
-                        <a href="<%- coauthor.link %>"><%= coauthor.name %></a>,
+                        <a class="coauthor" href="<%- coauthor.link %>"><%= coauthor.name %></a>,
                     <% } else { %>
                         <%= coauthor.name %>,
                     <% } %>
                 <% } %>
                 <% if (item.coauthors[item.coauthors.length - 2].link) { %>
-                    <a href="<%- item.coauthors[item.coauthors.length - 2].link %>"><%= item.coauthors[item.coauthors.length - 2].name %></a>
+                    <a class="coauthor" href="<%- item.coauthors[item.coauthors.length - 2].link %>"><%= item.coauthors[item.coauthors.length - 2].name %></a>
                 <% } else { %>
                     <%= item.coauthors[item.coauthors.length - 2].name %>
                 <% } %>
                 <% if (item.coauthors[item.coauthors.length - 1].link) { %>
-                    and <a href="<%- item.coauthors[item.coauthors.length - 1].link %>"><%= item.coauthors[item.coauthors.length - 1].name %></a>.<br/>
+                    and <a class="coauthor" href="<%- item.coauthors[item.coauthors.length - 1].link %>"><%= item.coauthors[item.coauthors.length - 1].name %></a>.<br/>
                 <% } else { %>
                     and <%= item.coauthors[item.coauthors.length - 1].name %>.<br/>
                 <% } %>
@@ -33,9 +33,7 @@
     <% } %>
     <% if (item.links) { %>
         <% for (const link of item.links) { %>
-            <a href="<%- link.url %>">
-                <button type="button" class="btn btn-outline-primary btn-sm scale"><%= link.label %></button>
-            </a>
+            <a class="btn btn-outline-primary btn-sm scale" href="<%- link.url %>"><%= link.label %></a>
         <% } %>
     <% } %>
 

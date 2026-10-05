@@ -2,47 +2,47 @@
 <% for (const item of items) { %>
     <div class="list grid" style="column-gap: 0px;">
     <div class="g-col-12 g-col-lg-8 g-col-md-9 g-col-sm-9">
-        <b><a href="<%- item.path %>"><%= item.title %></a></b><br/>
+        <b><a class="paper-title" href="<%- item.path %>"><%= item.title %></a></b><br/>
     <% if (item.coauthors) { %>
         <% if (item.coauthors.length == 1) { %>
-            Joint with <a href="<%- item.coauthors[0].link %>"><%= item.coauthors[0].name %></a>.<br/>
+            Joint with <% if (item.coauthors[0].link) { %><a class="coauthor" href="<%- item.coauthors[0].link %>"><%= item.coauthors[0].name %></a><% } else { %><%= item.coauthors[0].name %><% } %>.<br/>
         <% } else { %>
              Joint with 
              <% for (const coauthor of item.coauthors.slice(0, -2)) { %>
                 <% if (coauthor.link) { %>
-                    <a href="<%- coauthor.link %>"><%= coauthor.name %></a>,
+                    <a class="coauthor" href="<%- coauthor.link %>"><%= coauthor.name %></a>,
                 <% } else { %>
                     <%= coauthor.name %>,
                 <% } %>
             <% } %>
             <% if (item.coauthors[item.coauthors.length - 2].link) { %>
-                <a href="<%- item.coauthors[item.coauthors.length - 2].link %>"><%= item.coauthors[item.coauthors.length - 2].name %></a>
+                <a class="coauthor" href="<%- item.coauthors[item.coauthors.length - 2].link %>"><%= item.coauthors[item.coauthors.length - 2].name %></a>
             <% } else { %>
                 <%= item.coauthors[item.coauthors.length - 2].name %>
             <% } %>
             <% if (item.coauthors[item.coauthors.length - 1].link) { %>
-                and <a href="<%- item.coauthors[item.coauthors.length - 1].link %>"><%= item.coauthors[item.coauthors.length - 1].name %></a>.<br/>
+                and <a class="coauthor" href="<%- item.coauthors[item.coauthors.length - 1].link %>"><%= item.coauthors[item.coauthors.length - 1].name %></a>.<br/>
             <% } else { %>
                 and <%= item.coauthors[item.coauthors.length - 1].name %>.<br/>
             <% } %>
         <% } %>
     <% } %>
-    <i><%= item.journ %></i>, <%= new Date(item.date).getFullYear() %>, <%= item.issue %>.<br/>
+    <% if (item.journ) { %>
+        <i><%= item.journ %></i>, <%= new Date(item.date).getFullYear() %><% if (item.issue) { %>, <%= item.issue %><% } %>.<br/>
+    <% } %>
     <% if (item.note) { %>
         <i><%= item.note %></i><br/>
     <% } %>
 
     <% if (item.links) { %>
         <% for (const link of item.links) { %>
-            <a href="<%- link.url %>">
-                <button type="button" class="btn btn-outline-primary btn-sm scale"><%= link.label %></button>
-            </a>
+            <a class="btn btn-outline-primary btn-sm scale" href="<%- link.url %>"><%= link.label %></a>
         <% } %>
     <% } %>
     </div>
     <div class="image_list g-col-8 g-col-lg-4 g-col-md-3 g-col-sm-3"> 
     <% if (item.image) { %>
-            <a href="<%- item.path %>">
+            <a class="image-link" href="<%- item.path %>">
                 <img src="<%- item.image %>" alt="image" width="100%">
             </a>
     <% } %>
